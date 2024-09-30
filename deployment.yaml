@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: <your-docker-registry>/hello-world:latest
+        image: "nrt.ocir.io/nrcbpbtrtyz0/githubrepo:latest"
         ports:
         - containerPort: 3000
