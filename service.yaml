@@ -1,16 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: githubapp
-  labels:
-    app: githubapp
-  annotations:
-    oci.oraclecloud.com/load-balancer-type: "lb"
+  name: hello-world-service
 spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 8080
   selector:
-    app: githubapp
-#as is
+    app: hello-world
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
