@@ -1,0 +1,45 @@
+version: 0.1
+component: build
+timeoutInSeconds: 3600
+runAs: root
+shell: bash 
+env:
+  variables:
+    DEPLOYMENT_DIRECTORY: "${OCI_WORKSPACE_DIR}/deployment/${DEPLOYMENT_ENV}"
+    DOCKER_TAG: "nrt.ocir.io/nrcbpbtrtyz0/githubrepo:latest"
+  
+  exportedVariables:
+    - BUILDRUN_HASH    
+
+steps:
+  - type: Command
+    name: "Build container image"
+    timeoutInSeconds: 3000
+    command: |
+
+  
+      echo "OCI_WORKSPACE_DIR: ${OCI_WORKSPACE_DIR}"
+      echo "OCI_BUILD_RUN_ID: ${OCI_BUILD_RUN_ID}"
+      echo "DOCKER_TAG: ${DOCKER_TAG}"
+      echo "DEPLOYMENT_ENV: ${DEPLOYMENT_ENV}"
+
+      export DEPLOYMENT_TIMEOUT="120s"
+      export BUILDRUN_HASH=$(echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7)
+      echo "BUILDRUN_HASH: ${BUILDRUN_HASH}"
+
+      export REGISTRY="nrt.ocir.io/nrcbpbtrtyz0/githubrepo"
+      export PROJECT_NAME="githubapp"
+      export DEPLOYMENT_ENV="github_environment"
+      export IMAGE_CREATED_BY="OCIDevOps"
+      export GIT_TAG="$(git describe --tags 2>/dev/null || echo 'untagged')"
+      export DEPLOYMENT_DIRECTORY="${OCI_WORKSPACE_DIR}/deployment/${DEPLOYMENT_ENV}"
+      export IMAGE_VERSION="$(echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7)-${IMAGE_CREATED_BY}"
+      export DOCKER_TAG="${REGISTRY}/${PROJECT_NAME}:${IMAGE_VERSION}"
+
+      docker build -t ${DOCKER_TAG} .
+
+
+outputArtifacts:
+  - name: dockerimage
+    type: DOCKER_IMAGE
+    location: ${DOCKER_TAG}
