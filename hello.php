@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php
-    echo "Helloworld, world!";
+    echo "Hello, World!";
     echo "version 7";
     ?>
 </body>

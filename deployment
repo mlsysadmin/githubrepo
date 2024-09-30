@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:latest  # Update this to the latest image tag after the build
+          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:latest  # Ensure you update this to the correct tag from the build pipeline
           ports:
             - containerPort: 80  # Assuming your PHP application listens on port 80
           env:
             - name: DEPLOYMENT_ENV
-              value: "stage"  # You can set this based on your deployment environment
+              value: "github_environment"  # Adjust this based on your environment
             - name: IMAGE_CREATED_BY
               value: "OCIDevOps"
       imagePullSecrets:
