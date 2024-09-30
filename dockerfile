@@ -1,18 +1,11 @@
-# Use the official Node.js image as the base image
-FROM node:14
-
-# Set the working directory inside the container
-WORKDIR /usr/src/app
-
-# Copy the package.json and install dependencies
-COPY package*.json ./
-RUN npm install
-
-# Copy the rest of the application code
-COPY . .
-
-# Expose the port the app will run on
-EXPOSE 3000
-
-# Command to run the application
-CMD [ "node", "index.js" ]
+#Dockerfile
+FROM alpine:latest
+FROM php:7.4-cli
+#Install hotwrap binary in your container
+COPY --from=fnproject/hotwrap:latest    /hotwrap    /hotwrap
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+# Run the PHP code
+CMD [ "php", "./hello.php"]
+# Update entrypoint to use hotwrap, this will wrap your command
+ENTRYPOINT ["/hotwrap"]
