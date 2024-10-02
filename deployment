@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: myapp-container
-          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:1.0  
+          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:1.1  
           ports:
             - containerPort: 9000  
           env:
