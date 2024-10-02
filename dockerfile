@@ -1,5 +1,5 @@
 FROM php:7.4-cli
 WORKDIR /var/www/html
-COPY . /var/www/html
+COPY hello.php .
 EXPOSE 9000
-CMD ["php", "-S", "0.0.0.0:9000", "-t", "/var/www/html"]
+CMD [ "php", "-S", "0.0.0.0:9000", "-t", "/var/www/html" ]
