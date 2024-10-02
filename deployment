@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-deployment
+  namespace: githubrepo
   labels:
     app: myapp
 spec:
@@ -16,10 +17,10 @@ spec:
         app: myapp
     spec:
       containers:
-        - name: myapp
+        - name: myapp-container
           image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:latest  
           ports:
-            - containerPort: 80  
+            - containerPort: 9000  
           env:
             - name: DEPLOYMENT_ENV
               value: "github_environment"  
