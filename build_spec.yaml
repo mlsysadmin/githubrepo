@@ -6,7 +6,7 @@ shell: bash
 env:
   variables:
     DEPLOYMENT_DIRECTORY: "${OCI_WORKSPACE_DIR}/deployment/${DEPLOYMENT_ENV}"
-    DOCKER_TAG: "nrt.ocir.io/nrcbpbtrtyz0/githubrepo:1.6"
+    DOCKER_TAG: "nrt.ocir.io/nrcbpbtrtyz0/githubrepo:1.7"
   
   exportedVariables:
     - BUILDRUN_HASH    

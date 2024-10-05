@@ -4,15 +4,15 @@
     <title>My PHP Page</title>
     <style>
         body {
-            background-color: brown;
+            background-color: blue;
             color: white; /* Adding white text color for better readability */
         }
     </style>
 </head>
 <body>
     <?php
-    echo "Hello, World! ";
-    echo "Hello IT Operations ";
+    echo "ISHOWSPEED ";
+    echo "Meow meow meow meow meow meow meow ";
     ?>
 </body>
 </html>
