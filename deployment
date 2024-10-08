@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-deployment
+  name: k-deployment
   namespace: githubrepo
   labels:
     app: myapp
@@ -17,8 +17,8 @@ spec:
         app: myapp
     spec:
       containers:
-        - name: myapp-container
-          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:2.0
+        - name: k-container
+          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:2.1
           ports:
             - containerPort: 9000  
           env:
