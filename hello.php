@@ -52,7 +52,7 @@
     echo "<div class='cat-fact'><p>$randomFact</p></div>";
     ?>
 
-    <img src="https://placekitten.com/300/300" alt="Cute Cat Image">
+    <img src="https://www.istockphoto.com/photo/ragdoll-cat-on-black-background-gm1317748131-405085823" alt="Cute Cat Image">
 
     <p>Here's a random cute cat fact just for you! 😺</p>
 </body>

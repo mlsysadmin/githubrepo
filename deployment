@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: k-container
-          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:2.3
+          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:2.4
           ports:
             - containerPort: 9000  
           env:
