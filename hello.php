@@ -8,10 +8,10 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f8ff;
+            background-color: #6F4E37;
         }
         h1 {
-            color: #ff69b4;
+            color: #FAF5EF;
         }
         img {
             width: 300px;
@@ -20,21 +20,24 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
         }
         p {
-            font-size: 18px;
-            color: #333;
+            font-size: 14px;
+            color: #FAF5EF;
         }
         .cat-fact {
-            margin: 20px;
-            padding: 10px;
-            background-color: #f8f8f8;
-            border-radius: 10px;
+            margin: 0px;
+            padding: 0px;
+            background-color: #6F4E37;
+            border-radius: 2px;
             display: inline-block;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 20px 20px 24px rgba(0, 0, 0, 0.1);
+        }
+        .big-emoji {
+            font-size: 60px; /* Adjust this size for bigger emoji */
         }
     </style>
 </head>
 <body>
-    <h1>🐾 Meet Our Cute Cats 🐾</h1>
+    <h1 class="big-emoji">🐾🐈🐾</h1> <!-- Big Cat Emoji -->
 
     <?php
     $catFacts = [
@@ -42,6 +45,10 @@
         "A group of cats is called a clowder.",
         "Cats can make over 100 different sounds.",
         "The oldest cat lived for 38 years.",
+        "Kate is a cutie.",
+        "Rexyl is juts.",
+        "Regan is gay.",
+        "Oscar is scared of Beyonce.",
         "Cats’ noses are as unique as human fingerprints."
     ];
 
@@ -51,9 +58,3 @@
     // Display cat fact
     echo "<div class='cat-fact'><p>$randomFact</p></div>";
     ?>
-
-    <img src="https://www.istockphoto.com/photo/ragdoll-cat-on-black-background-gm1317748131-405085823" alt="Cute Cat Image">
-
-    <p>Here's a random cute cat fact just for you! 😺</p>
-</body>
-</html>
