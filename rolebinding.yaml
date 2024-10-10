@@ -5,7 +5,7 @@ metadata:
   namespace: githubrepo  
 subjects:
 - kind: ServiceAccount
-  name: ocid1.devopsdeploypipeline  
+  name: githubrepo
   namespace: githubrepo
 roleRef:
   kind: Role
