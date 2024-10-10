@@ -6,7 +6,7 @@ shell: bash
 env:
   variables:
     DEPLOYMENT_DIRECTORY: "${OCI_WORKSPACE_DIR}/deployment/${DEPLOYMENT_ENV}"
-    DOCKER_TAG: "nrt.ocir.io/nrcbpbtrtyz0/githubrepo:2.8"
+    DOCKER_TAG: "nrt.ocir.io/nrcbpbtrtyz0/githubrepo:2.9"
   
   exportedVariables:
     - BUILDRUN_HASH    
@@ -28,7 +28,7 @@ steps:
           export GIT_TAG="$(git describe --tags)"
           export DEPLOYMENT_DIRECTORY="${OCI_WORKSPACE_DIR}/deployment/${DEPLOYMENT_ENV}"
           export IMAGE_VERSION="$(echo $OCI_BUILD_RUN_ID | rev | cut -c 1-7)-${IMAGE_CREATED_BY}"
-          export IMAGE_VERSION="2.8"
+          export IMAGE_VERSION="2.9"
           export DOCKER_TAG="${REGISTRY}/${PROJECT_NAME}:${IMAGE_VERSION}"
 
           docker build -t ${DOCKER_TAG} .
