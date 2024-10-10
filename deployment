@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: k-container
-          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:2.9
+          image: nrt.ocir.io/nrcbpbtrtyz0/githubrepo:2.9 
           ports:
             - containerPort: 9000  
           env:
@@ -27,4 +27,4 @@ spec:
             - name: IMAGE_CREATED_BY
               value: "OCIDevOps"
       imagePullSecrets:
-        - name: githubrepo  
+        - name: net-tls 
