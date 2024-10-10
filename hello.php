@@ -48,6 +48,12 @@
         "Kate is a cutie.",
         "Rexyl is juts.",
         "Regan is gay.",
+        "Regan has a crush on ma'am shek.",
+        "Regan always snore.",
+        "Regan didn't brush his teeth this morning.",
+        "Regan farts a lot.",
+        "Regan likes men.",
+        "Regan iniwan.",
         "Oscar is scared of Beyonce.",
         "Cats’ noses are as unique as human fingerprints."
     ];

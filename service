@@ -6,9 +6,39 @@ metadata:
   labels:
     app: myapp
 spec:
-  type: Load Balancer
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 9000
   selector:
     app: myapp
+
+________________________________
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k-ingress
+  namespace: githubrepo  
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: net-tls  
+  rules:
+  - host: skiffy.mlhuillier.net 
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: k-service  
+            port:
+              number: 80    
+  # Optional TLS configuration for SSL
+  tls:
+  - hosts:
+    - skiffy.mlhuillier.net 
+    secretName: net-tls 
+
+
+
